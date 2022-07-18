@@ -1,0 +1,155 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: bisque;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding: 50px;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(226, 207, 207);
+    justify-content: space-between;
+    align-content: space-between;
+    width: 300px;
+    height: 350px;
+}
+
+.display{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: darkcyan;
+    padding: 5px;
+    height: 50px;
+
+}
+
+.valueContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+
+}
+.displayValue{
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    user-select: none;
+    font-size: x-large;
+    color: white;
+
+}
+
+.keypad{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    height: 200px;
+    gap: 10px;
+    
+    
+
+}
+.numbers{
+    display: flex;
+    flex-direction: row;
+    
+   
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.operators{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+    
+    flex-wrap: wrap;
+    gap: 5px;
+
+
+}
+
+.nButton{
+
+    display: flex;
+    background-color: rgba(92, 92, 223, 0.945);
+    width: 45px;
+    height: 45px;
+    border-radius: 25%;
+    justify-content: center;
+    align-content: center;
+    
+    
+    
+
+
+}
+.nummer{
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    user-select: none;
+    font-size: x-large;
+    color: white;
+}
+
+.oButton{
+
+    display: flex;
+    background-color: rgba(92, 92, 223, 0.945);
+    width: 40px;
+    height: 40px;
+    border-radius: 25%;
+    justify-content: center;
+    align-content: center;
+}
+.operator{
+    
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    user-select: none;
+    font-size: x-large;
+    color: white;
+
+}
+
+.footer{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    background-color: skyblue;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
