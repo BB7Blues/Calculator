@@ -23,13 +23,14 @@ body{
     display: flex;
     flex-direction: column;
     padding: 20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: rgb(226, 207, 207);
     justify-content: space-between;
     align-content: space-between;
     width: 300px;
-    height: 350px;
+    gap: 10px;
+    
 }
 
 .display{
@@ -38,18 +39,53 @@ body{
     flex-direction: row;
     justify-content: flex-start;
     background-color: darkcyan;
-    padding: 5px;
-    height: 50px;
+    padding: 20px;
+    
 
 }
 
 .valueContainer{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
     padding: 10px;
+    padding-left: 10px;
 
 }
 .displayValue{
+
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    user-select: none;
+    font-size: x-large;
+    color: white;
+
+}
+.specialContain{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-left: 10px;
+
+}
+
+.sButton{
+
+    display: flex;
+    background-color: rgba(92, 92, 223, 0.945);
+    width: 80px;
+    height: 35px;
+    border-radius: 25%;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.special{
 
     display: flex;
     justify-items: center;
@@ -65,18 +101,13 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
-    height: 200px;
-    gap: 10px;
+    padding: 8px;
+    height: 220px;
     
-    
-
 }
 .numbers{
     display: flex;
     flex-direction: row;
-    
-   
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -85,11 +116,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
-    
-    
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
 
 
 }
@@ -123,8 +151,8 @@ body{
 
     display: flex;
     background-color: rgba(92, 92, 223, 0.945);
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 25%;
     justify-content: center;
     align-content: center;
@@ -140,10 +168,23 @@ body{
     color: white;
 
 }
+.specialContain2{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-left: 10px;
+
+
+}
+
+
 
 .footer{
 
     display: flex;
+    flex: 0 0 auto;
     flex-direction: row;
     justify-content: center;
     padding: 20px;
