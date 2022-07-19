@@ -71,6 +71,7 @@ for (let i = 1 ; i < 5;i++){
     let num   = document.createElement('div');
     knopf.classList.add('oButton');
     num.classList.add('operator');
+
     num.setAttribute('id', "op" +i);
     knopf.setAttribute('id',"o" + i);
     
@@ -95,9 +96,13 @@ equal.textContent   = "=";
 clearBtn.textContent = "AC";
 delBtn.textContent   = "DEL";
 plus.textContent = "+";
+plus.setAttribute('moperator',"+");
 minus.textContent = "-";
-teilen.textContent = "/";
-mal.textContent = "*";
+minus.setAttribute('moperator',"-");
+teilen.textContent = "";
+teilen.setAttribute('moperator',"/");
+mal.textContent = "x";
+mal.setAttribute('moperator',"*");
 
 function clearDisplay(){
 
@@ -115,7 +120,7 @@ function clearDisplay(){
 
 const values = document.querySelector('.valueContainer');
 const operateButtons = document.querySelectorAll('.oButton');
-const acBtn = document.getElementById('s0');
+const acBtn = document.getElementById('sB0');
 const zeroBtn = document.getElementById('sBo0');
 const equalBtn = document.getElementById('sBo1');
 const buttons = document.querySelectorAll('.nButton');
@@ -162,16 +167,17 @@ equalBtn.addEventListener('click', ()=> {
 operateButtons.forEach(btn => {
     
     btn.addEventListener('click', () =>{
-        
+        let mop = btn.querySelector('.operator');
         let value = document.createElement('div');
         value.classList.add('displayValue');
         value.textContent = btn.textContent;
-        console.log(btn.textContent);
+        console.log(mop.getAttribute('moperator'));
         fullNumberold = fullNumbernew;
         fullNumbernew = 0;
         numberArrayOld = numberArrayNew;
         numberArrayNew = [];
-        operatorArray.push(btn.textContent);
+        operatorArray.push(mop.getAttribute('moperator'));
+        console.log(operatorArray);
         values.appendChild(value);
     });
     
@@ -183,11 +189,18 @@ buttons.forEach(btn => {
     btn.addEventListener('click', () =>{
         
         let value = document.createElement('div');
+
         value.classList.add('displayValue');
+
         value.textContent = btn.textContent;
+
         numberArrayNew.push(value.textContent);
+
         console.log(numberArrayNew);
+
         console.log(numberArrayOld);
+
+        // Machst aus 2 auf einanderfolgenden Zahlen ohne Operator eine
         fullNumbernew = parseInt(numberArrayNew.reduce((total,num) => {
          
             return total  = total + num;
@@ -199,6 +212,48 @@ buttons.forEach(btn => {
     
     
 });
+let testArray2 = [
+                
+                {operator : "*", number1 : 1 ,number2 : 2 },
+                {operator : "+", number1 : 2 ,number2 : 3 },
+                {operator : "-", number1 : 3 ,number2 : 4 }
+                ];
+
+                console.log(testArray2);
+
+let newArray = [];
+
+for(i = 0; i < testArray2.length;i++){
+
+    newArray.push(testArray2[i]);
+
+
+}
+console.log(newArray);
+
+function sortItOut(arrays){
+let arraysNew = [];
+for(i = 0; i < testArray2.length;i++){
+
+    arraysNew.push(testArray2[i]);
+
+
+}
+arraysNew.sort(function(a){
+    if(a.operator == "*" || a.operator == "/") return -1;
+    return 1;
+});
+return arraysNew;
+}
+
+ let ArrayToReduce = sortItOut(newArray);
+ console.log(ArrayToReduce);
+ console.log(ArrayToReduce.reduce((total,a) => {
+    console.log(total);
+   return total = operate(total,a.operator,a.number2); 
+
+ },ArrayToReduce[0].number1))
+
 
 /*function makeNumber(btn){
 

@@ -2,7 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: bisque;
+    background-color: rgb(52, 248, 255);
 }
 
 .header{
@@ -24,12 +24,14 @@ body{
     flex-direction: column;
     padding: 20px;
     padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: rgb(226, 207, 207);
+    padding-bottom: 10px;
+    background-color: rgb(220, 219, 245);
     justify-content: space-between;
     align-content: space-between;
-    width: 300px;
+    width: 350px;
     gap: 10px;
+    border-style:groove;
+    border-radius: 10%;
     
 }
 
@@ -38,10 +40,11 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    background-color: darkcyan;
-    padding: 20px;
-    
+    background-color: rgb(152, 224, 224);
+    height: 60px;    
 
+    border-style:groove;
+    border-radius: 20%;
 }
 
 .valueContainer{
@@ -49,7 +52,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 5px;
-    padding: 10px;
+    
     padding-left: 10px;
 
 }
@@ -60,7 +63,7 @@ body{
     align-items: center;
     user-select: none;
     font-size: x-large;
-    color: white;
+    color: rgb(49, 36, 36);
 
 }
 .specialContain{
@@ -76,10 +79,12 @@ body{
 .sButton{
 
     display: flex;
-    background-color: rgba(92, 92, 223, 0.945);
+    background-color: rgba(240, 207, 198, 0.945);
     width: 80px;
     height: 35px;
-    border-radius: 25%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: cadetblue;
     justify-content: center;
     align-content: center;
 
@@ -102,14 +107,22 @@ body{
     flex-direction: row;
     justify-content: space-between;
     padding: 8px;
-    height: 220px;
+    height: 330px;
     
+}
+.right{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 230px;
+
 }
 .numbers{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 5px;
+    row-gap: 14px;
 }
 .operators{
 
@@ -122,21 +135,7 @@ body{
 
 }
 
-.nButton{
 
-    display: flex;
-    background-color: rgba(92, 92, 223, 0.945);
-    width: 45px;
-    height: 45px;
-    border-radius: 25%;
-    justify-content: center;
-    align-content: center;
-    
-    
-    
-
-
-}
 .nummer{
 
     display: flex;
@@ -147,13 +146,16 @@ body{
     color: white;
 }
 
-.oButton{
+.oButton,
+.nButton{
 
     display: flex;
-    background-color: rgba(92, 92, 223, 0.945);
-    width: 45px;
-    height: 45px;
-    border-radius: 25%;
+    background-color: rgba(240, 207, 198, 0.945);
+    width: 65px;
+    height: 65px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: cadetblue;
     justify-content: center;
     align-content: center;
 }
@@ -173,9 +175,22 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    gap: 10px;
-    padding-left: 10px;
+    align-content: center;
+    padding-top: 13px;
+    gap: 15px;
 
+
+}
+.sButton#sBo0,
+.sButton#sBo1{
+
+    display: flex;
+    border-width: 3px; 
+    width: 97.5px;
+    height: 65px;
+    border-style: solid;
+    justify-content: center;
+    align-content: center;
 
 }
 
