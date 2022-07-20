@@ -167,6 +167,25 @@ equalBtn.addEventListener('click', ()=> {
 operateButtons.forEach(btn => {
     
     btn.addEventListener('click', () =>{
+        if (operatorArray[0] == "+" || operatorArray[0] == "-" || operatorArray[0] == "*" || operatorArray[0] == "/") {
+            let value = document.createElement('div');
+    
+   
+            let everything = values.querySelectorAll('.displayValue');
+             everything.forEach(a =>{
+                 values.removeChild(a);
+             });
+         
+             value.classList.add('displayValue');
+             value.textContent = operate(fullNumberold,operatorArray,fullNumbernew);
+             fullNumbernew = operate(fullNumberold,operatorArray,fullNumbernew);
+             numberArrayNew = [];
+             numberArrayOld = [];
+             operatorArray = [];
+             numberArrayNew.push(fullNumbernew);
+             fullNumberold = 0;
+             values.appendChild(value);
+        }
         let mop = btn.querySelector('.operator');
         let value = document.createElement('div');
         value.classList.add('displayValue');
@@ -177,6 +196,7 @@ operateButtons.forEach(btn => {
         numberArrayOld = numberArrayNew;
         numberArrayNew = [];
         operatorArray.push(mop.getAttribute('moperator'));
+        console.log("op array");
         console.log(operatorArray);
         values.appendChild(value);
     });
@@ -212,59 +232,3 @@ buttons.forEach(btn => {
     
     
 });
-let testArray2 = [
-                
-                {operator : "*", number1 : 1 ,number2 : 2 },
-                {operator : "+", number1 : 2 ,number2 : 3 },
-                {operator : "-", number1 : 3 ,number2 : 4 }
-                ];
-
-                console.log(testArray2);
-
-let newArray = [];
-
-for(i = 0; i < testArray2.length;i++){
-
-    newArray.push(testArray2[i]);
-
-
-}
-console.log(newArray);
-
-function sortItOut(arrays){
-let arraysNew = [];
-for(i = 0; i < testArray2.length;i++){
-
-    arraysNew.push(testArray2[i]);
-
-
-}
-arraysNew.sort(function(a){
-    if(a.operator == "*" || a.operator == "/") return -1;
-    return 1;
-});
-return arraysNew;
-}
-
- let ArrayToReduce = sortItOut(newArray);
- console.log(ArrayToReduce);
- console.log(ArrayToReduce.reduce((total,a) => {
-    console.log(total);
-   return total = operate(total,a.operator,a.number2); 
-
- },ArrayToReduce[0].number1))
-
-
-/*function makeNumber(btn){
-
-    let value = document.createElement('div');
-    value.classList.add('displayValue');
-    value.textContent = btn.textContent;
-    //console.log(btn.srcElemetn);
-    values.appendChild(value);
-
-}
-    
-buttons.forEach(btn => btn.addEventListener('click', makeNumber(btn)));
-
-*/
